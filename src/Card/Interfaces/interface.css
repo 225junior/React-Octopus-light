@@ -1,0 +1,51 @@
+.column {
+    background-color: #ebebeb;
+    border-radius: 10px;
+    border: 1px solid #f9ae92;
+    box-shadow: 3px 3px 3px 0px #0000003d;
+    /* cursor: move; */
+    float: left;
+    height: 150px;
+    margin-bottom: 30px;
+    margin-right: 5px;
+    text-align: center;
+    width: 150px;
+}
+
+.column header {
+    background: coral;
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 5px;
+    color: #fff;
+    padding: 5px;
+    text-shadow: #000 -1px 2px;
+    cursor: move;
+
+}
+
+.column {
+    /* transition: transform 0.2s ease-out; */
+    transition: transform 0.2s cubic-bezier(0.75, 0.56, 0, 1.18);
+}
+
+/* Lorsque la colone est survolée par un autre item pour un dropping*/
+.column.over {
+    border: 2px dashed #000;
+}
+
+/*Ajouter losque l'élément est dragging*/
+.column.moving {
+    opacity: 0.25;
+    transform: scale(0.8);
+}
+
+.column .content {
+    font-weight: bold;
+    padding-top: 15px;
+    text-shadow: #fff 0 1px;
+}
+.poly-overflow-scroll{
+    overflow-y: scroll !important;
+}
