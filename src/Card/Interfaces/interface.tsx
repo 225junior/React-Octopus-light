@@ -110,7 +110,7 @@ const Interface: React.FC<IProps> = (IProps) => {
                 <Sidebar />
 
 
-                <div className="col-sm p-3 vh-100 poly-overflow-scroll">
+                <div className="col-sm p-3 vh-100 op-overflow-scroll">
                     <h1 className="page-header mb-5">Test OCTOPUS <small>V4</small></h1>
 
                     <div className='d-flex flex-row-reverse'>
@@ -150,20 +150,20 @@ const Interface: React.FC<IProps> = (IProps) => {
                                             </div>
 
 
-                                            <div className={"column col " + className}
-                                    draggable
-                                    key={index}
-                                    id={'test-' + index as unknown as string}
-                                    onDrag={(event) => handleDrag(event)}
-                                    onDragStart={handleDragStart}
-                                    onDragOver={enableDropping}
-                                    onDrop={handleDrop}
-                                    onDragEnter={handleDragOverStart}
-                                    onDragLeave={handleDragOverEnd}
-                                >
-                                    <header>{list.Title}</header>
-                                    <div className="content" data-col-moves="0">{list.Description}</div>
-                                </div>
+                                            {/* <div className={"column col " + className}
+                                                draggable
+                                                key={index}
+                                                id={'test-' + index as unknown as string}
+                                                onDrag={(event) => handleDrag(event)}
+                                                onDragStart={handleDragStart}
+                                                onDragOver={enableDropping}
+                                                onDrop={handleDrop}
+                                                onDragEnter={handleDragOverStart}
+                                                onDragLeave={handleDragOverEnd}
+                                            >
+                                                <header>{list.Title}</header>
+                                                <div className="content" data-col-moves="0">{list.Description}</div>
+                                            </div> */}
 
                                         </div>
 
