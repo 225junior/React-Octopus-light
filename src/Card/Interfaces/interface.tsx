@@ -9,14 +9,6 @@ interface IProps {
 
 const Interface: React.FC<IProps> = (IProps) => {
     const [Items, SetItems] = React.useState<Item[]>([])
-    const [dragOver, setDragOver] = React.useState(false);
-    const handleDragOverStart = () => setDragOver(true);
-    const handleDragOverEnd = () => setDragOver(false);
-
-
-    const enableDropping = (event: React.DragEvent<HTMLDivElement>) => {
-        event.preventDefault();
-    }
 
 
     const AddItem = () => {
@@ -68,42 +60,6 @@ const Interface: React.FC<IProps> = (IProps) => {
 
     }, [])
 
-    const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-        const id = event.dataTransfer.getData('text');
-        console.log(`Elément déplacé: id: ${id}`);
-        setDragOver(false);
-    }
-
-
-    /**
-     * During the dragging event
-     * @param e
-     */
-    const handleDrag = (e: React.DragEvent<HTMLDivElement>) => {
-        // console.log("X: " + e.clientX + " | Y: " + e.clientY)
-    }
-
-    /**
-     * Only when the dragging start
-     * @param event
-     */
-    const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
-        event.dataTransfer.setData('text', event.currentTarget.id);
-        console.log(event)
-        event.dataTransfer.effectAllowed = 'move';
-
-
-        // event.dataTransfer.setData('text/html', event.currentTarget);
-
-        // dragSrcEl_ = this;
-
-        // this/e.target is the source node.
-        // this.classList.add('moving');
-    }
-
-
-
-
     return (
         <div className="container-fluid">
             <div className="row">
@@ -122,20 +78,12 @@ const Interface: React.FC<IProps> = (IProps) => {
 
                             {
                                 Items.map((list, index) => {
-                                    let className = dragOver ? "over" : "";
 
                                     return (
-                                        <div className={"col-md-6 mb-1" + className} key={index}>
-                                            <div className="card" draggable id={'test-' + index as unknown as string}
-                                                onDrag={(event) => handleDrag(event)}
-                                                onDragStart={handleDragStart}
-                                                onDragOver={enableDropping}
-                                                onDrop={handleDrop}
-                                                onDragEnter={handleDragOverStart}
-                                                onDragLeave={handleDragOverEnd}
-                                            >
+                                        <div className={"col-md-6 mb-1"} key={index}>
+                                            <div className="card">
                                                 <img
-                                                    src="https://www.kindacode.com/wp-content/uploads/2021/08/phone.jpg"
+                                                    src="images/img1.png"
                                                     className="card-img-top"
                                                     alt="Phone"
                                                 />
@@ -148,23 +96,6 @@ const Interface: React.FC<IProps> = (IProps) => {
                                                     <a href="#" className="btn btn-primary">Ouvrir</a>
                                                 </div>
                                             </div>
-
-
-                                            {/* <div className={"column col " + className}
-                                                draggable
-                                                key={index}
-                                                id={'test-' + index as unknown as string}
-                                                onDrag={(event) => handleDrag(event)}
-                                                onDragStart={handleDragStart}
-                                                onDragOver={enableDropping}
-                                                onDrop={handleDrop}
-                                                onDragEnter={handleDragOverStart}
-                                                onDragLeave={handleDragOverEnd}
-                                            >
-                                                <header>{list.Title}</header>
-                                                <div className="content" data-col-moves="0">{list.Description}</div>
-                                            </div> */}
-
                                         </div>
 
 
