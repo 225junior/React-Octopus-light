@@ -1,9 +1,28 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "Apps": [
+    {
+      "Id": 1,
+      "Title": "App 1",
+      "Type": 1,
+      "Description": "Test de description"
+    },
+    {
+      "Id": 2,
+      "Title": "App 2",
+      "Type": 1,
+      "Description": "Test de description"
+    },
+    {
+      "Id": 3,
+      "Title": "App 3",
+      "Type": 3,
+      "Description": "Test de description"
+    },
+    {
+      "Id": 4,
+      "Title": "App 4",
+      "Type": 2,
+      "Description": "Test de description"
+    }
+  ]
+}
