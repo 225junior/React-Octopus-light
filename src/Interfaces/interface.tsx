@@ -2,6 +2,7 @@ import React from 'react'
 import "./interface.css"
 import Item, { AppTypes } from './Item.model';
 import Sidebar from './sidebar';
+import img from '../images/img1.png';
 
 
 interface IProps {
@@ -57,7 +58,6 @@ const Interface: React.FC<IProps> = (IProps) => {
 
     React.useEffect(() => {
         SetItems(list)
-
     }, [])
 
     return (
@@ -75,7 +75,6 @@ const Interface: React.FC<IProps> = (IProps) => {
                     <div id="columns-full" className="columns">
                         <div className="row">
 
-
                             {
                                 Items.map((list, index) => {
 
@@ -83,7 +82,7 @@ const Interface: React.FC<IProps> = (IProps) => {
                                         <div className={"col-md-6 mb-1"} key={index}>
                                             <div className="card">
                                                 <img
-                                                    src="images/img1.png"
+                                                    src={img}
                                                     className="card-img-top"
                                                     alt="Phone"
                                                 />

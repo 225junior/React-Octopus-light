@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../../images/img1.png';
+import img from '../images/img1.png';
 
 
 interface IProps {
